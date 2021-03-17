@@ -11,21 +11,21 @@
     <script>
     function loadContent(){
         let xhttp = new XMLHttpRequest();
-        xhttp.inreadystatechange = function(){
+        xhttp.onreadystatechange = function(){
             console.log(this.readyState+", "+this.status);
             if(this.readyState==4 && this.status==200){
                 console.log(this.responseText);
                 data = JSON.parse(this.responseText);
                 out = document.getElementById("out");
                 console.log(out.length);
-                text="";
+                text="<table border='1'>";
                 for(i=0;i<data.length;i++){
                     for(inf in data[i]){
-                        text+= date[i][inf]+" ";
+                        text+= "<td>"+data[i][inf]+ "</td>";
                     }
-                    text += "\n";
+                    text += "<tr>"+text+"</tr>";
                 }
-                out.innerHTML = text;
+                out.innerHTML = text+"</table>";
             }
         }
         xhttp.open("GET", "02 rest.php", true);
