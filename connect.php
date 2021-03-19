@@ -1,6 +1,6 @@
 <?php
-    define("username","test");
-    define("pass","ikwbH91GbCLxQA7d");
+    define("username","root");
+    define("pass","");
     define("host","localhost");
     define("db","test");
     $mysql = new mysqli(host,username,pass,db);

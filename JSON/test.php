@@ -16,7 +16,7 @@
     <select id="movie_title" onchange="load_movie_content()">
     <option value="">N\A</option>
     </select><br>
-    <div id="out"></div>
+    <div id="out" style="width:50px"></div>
     <script>
         let jSonEx;
 
@@ -28,7 +28,7 @@
             for(i = 0;i<jSonEx.length;i++){
                 movie_year.add(jSonEx[i].year);
             }
-            alert("Total Year "+movie_year.size);
+            //alert("Total Year "+movie_year.size);
             const ref_year = movie_year.values();
             for(y = 0;y<movie_year.size;y++){
                 var option = document.createElement("option");
@@ -41,7 +41,7 @@
             //alert("Year chang");
             var doc= document.getElementById("movie_title");
             var y = document.getElementById("sel_year");
-            alert(y.value);
+            //alert(y.value);
             doc.innerHTML = "";
             for(i = 0;i<jSonEx.length;i++){
                 if(jSonEx[i].year==y.value){
@@ -52,6 +52,14 @@
             }
         }
         function load_movie_content(){
+            
+            var doc = document.getElementById("out");
+            var txt = document.createElement("input");
+            txt.value = "Movie Title";
+            doc.appendChild(txt);
+            var txt = document.createElement("TextArea");
+            txt.value = "Movie Title";
+            doc.appendChild(txt);
             
         }
     </script>

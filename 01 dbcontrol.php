@@ -20,6 +20,9 @@ class db{
         // $this->debug_text(print_r($data)); 
         return $data;
     }
+    public function query_only($sql){
+        $result = $this->db->query($sql);
+    }
     function debug_text($text){
         if($this->debug){
             #if true debug text on for track any
